@@ -18,7 +18,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
 
 # set repo
-wget -O /etc/apt/sources.list "http://x-mvst.cf/ld/Debian7/sources.list.debian7"
+wget -O /etc/apt/sources.list "https://github.com/har1st/Debian7/blob/master/sources.list.debian7"
 wget "http://x-mvst.cf/ld/Debian7/dotdeb.gpg"
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 
@@ -201,20 +201,20 @@ service vnstat restart
 
 # download
 cd /usr/bin
-wget -O menu "http://x-mvst.cf/ld/Debian7/menu.sh"
-wget -O banner-edit "http://x-mvst.cf/ld/Debian7/banner-edit.sh"
-wget -O user-new "http://x-mvst.cf/ld/Debian7/usernew.sh"
-wget -O create-trial "http://x-mvst.cf/ld/Debian7/trial.sh"
-wget -O delete-user "http://x-mvst.cf/ld/Debian7/hapus.sh"
-wget -O user-login "http://x-mvst.cf/ld/Debian7/user-login.sh"
-wget -O user-list "http://x-mvst.cf/ld/Debian7/user-list.sh"
-wget -O resvis "http://x-mvst.cf/ld/Debian7/resvis.sh"
+wget -O menu "https://github.com/har1st/Debian7/blob/master/menu.sh"
+wget -O banner-edit "https://github.com/har1st/Debian7/blob/master/banner-edit.sh"
+wget -O user-new "https://github.com/har1st/Debian7/blob/master/user-new.sh"
+wget -O create-trial "https://github.com/har1st/Debian7/blob/master/user-trial.sh"
+wget -O delete-user "https://github.com/har1st/Debian7/blob/master/user-del.sh"
+wget -O user-login "https://github.com/har1st/Debian7/blob/master/user-login.sh"
+wget -O user-list "https://github.com/har1st/Debian7/blob/master/user-list.sh"
+wget -O resvis "https://github.com/har1st/Debian7/blob/master/resvis.sh"
 wget -O speedtest "http://x-mvst.cf/ld/Debian7/speedtest_cli.py"
-wget -O info "http://x-mvst.cf/ld/Debian7/info.sh"
-wget -O mem-info "http://x-mvst.cf/ld/Debian7/mrtg-mem.sh"
-wget -O about-team "http://x-mvst.cf/ld/Debian7/about.sh"
-wget -O limit-login "http://x-mvst.cf/ld/Debian7/user-limit.sh"
-wget -O create-ocs "http://x-mvst.cf/ld/Debian7/create-ocs.sh"
+wget -O info "https://github.com/har1st/Debian7/blob/master/info.sh"
+wget -O mem-info "https://github.com/har1st/Debian7/blob/master/mrtg-mem.sh"
+wget -O about-team "https://github.com/har1st/Debian7/blob/master/about.sh"
+wget -O limit-login "https://github.com/har1st/Debian7/blob/master/user-limit.sh"
+wget -O create-ocs "https://github.com/har1st/Debian7/blob/master/create-ocs.sh"
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "* * * * * service dropbear restart" > /etc/cron.d/dropbear
 chmod +x menu
@@ -280,7 +280,7 @@ echo -e "\e[37;1m Script"  | tee -a log-install.txt
 echo -e "\e[37;1m- -----"  | tee -a log-install.txt
 echo -e "\e[35;1m menu          (Menampilkan daftar perintah yang tersedia)"  | tee -a log-install.txt
 echo -e "\e[35;1m banner-edit   (Mengganti banner login)"  | tee -a log-install.txt
-echo -e "\e[35;1m user-new 	    (Membuat Akun SSH)"  | tee -a log-install.txt
+echo -e "\e[35;1m user-new 	(Membuat Akun SSH)"  | tee -a log-install.txt
 echo -e "\e[35;1m create-trial  (Membuat Akun Trial)"  | tee -a log-install.txt
 echo -e "\e[35;1m delete-user   (Menghapus Akun SSH)"  | tee -a log-install.txt
 echo -e "\e[38;1m user-login    (Cek User Login)"  | tee -a log-install.txt
@@ -290,8 +290,8 @@ echo -e "\e[34;1m reboot        (Reboot VPS)"  | tee -a log-install.txt
 echo -e "\e[34;1m speedtest     (Speedtest VPS)"  | tee -a log-install.txt
 echo -e "\e[34;1m info          (Menampilkan Informasi Sistem)"  | tee -a log-install.txt
 echo -e "\e[34;1m mem-info      (Menampilkan Informasi memory)" | tee -a log-install.txt
-echo -e "\e[34;1m limit-login	        (kill multy login)" | tee -a log-install.txt
-echo -e "\e[34;1m about-team   (Informasi tentang script auto install)"  | tee -a log-install.txt
+echo -e "\e[34;1m limit-login	(kill multy login)" | tee -a log-install.txt
+echo -e "\e[34;1m about-team    (Informasi tentang script auto install)"  | tee -a log-install.txt
 echo -e "\e[35;1m Account Default (utk SSH dan VPN)"  | tee -a log-install.txt
 echo -e "---------------"  | tee -a log-install.txt
 echo -e "\e[35;1m User     : Admin"  | tee -a log-install.txt
