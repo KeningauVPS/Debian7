@@ -173,7 +173,7 @@ service vnstat restart
 
 # download
 cd /usr/bin
-wget -O menu "http://x-mvst.cf/ld/Debian7/menu.sh"
+wget -O menu "https://raw.githubusercontent.com/har1st/Debian7/master/menu.sh"
 wget -O banner-edit "http://x-mvst.cf/ld/Debian7/banner-edit.sh"
 wget -O user-new "http://x-mvst.cf/ld/Debian7/usernew.sh"
 wget -O create-trial "http://x-mvst.cf/ld/Debian7/trial.sh"
