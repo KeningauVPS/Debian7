@@ -303,7 +303,7 @@ echo -e "\e[36;1m =[Webmin   : http://$MYIP:10000/]="  | tee -a log-install.txt
 echo -e "\e[36;1m =[Timezone : Asia/Jakarta (GMT +7)]="  | tee -a log-install.txt
 echo -e "\e[36;1m =[IPv6     : [off]]="  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo -e "\e[37;1m =[Script Mod by har1st="  | tee -a log-install.txt
+echo -e "\e[37;1m =[Script Mod by har1st_ssh="  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo -e "\e[37;1m =[Log Instalasi --> /root/log-install.txt]="  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
