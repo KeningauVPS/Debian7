@@ -4,7 +4,6 @@ cd /usr/local/bin
 wget -O premium-script.tar.gz "http://script.hostingtermurah.net/repo/premiumscript/premium-script.tar.gz"
 tar -xvf premium-script.tar.gz
 rm -f premium-script.tar.gz
-
 cp /usr/local/bin/premium-script /usr/local/bin/menu
 
 chmod +x /usr/local/bin/trial
