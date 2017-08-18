@@ -175,9 +175,6 @@ service vnstat restart
 cd /usr/bin
 wget -O menu "https://raw.githubusercontent.com/har1st/Debian7/master/menu.sh"
 wget -O banner-edit "https://raw.githubusercontent.com/har1st/Debian7/master/banner-edit.sh"
-wget -O banner-edit "https://raw.githubusercontent.com/har1st/Debian7/master/banner-edit.sh"
-wget -O banner-edit "https://raw.githubusercontent.com/har1st/Debian7/master/banner-edit.sh"
-wget -O banner-edit "https://raw.githubusercontent.com/har1st/Debian7/master/banner-edit.sh"
 wget -O user-new "https://raw.githubusercontent.com/har1st/Debian7/master/user-new.sh"
 wget -O create-trial "https://raw.githubusercontent.com/har1st/Debian7/master/user-trial.sh"
 wget -O delete-user "https://raw.githubusercontent.com/har1st/Debian7/master/user-del.sh"
@@ -251,8 +248,8 @@ echo -e "\e[34;1m reboot        (Reboot VPS)"  | tee -a log-install.txt
 echo -e "\e[34;1m speedtest     (Speedtest VPS)"  | tee -a log-install.txt
 echo -e "\e[34;1m info          (Menampilkan Informasi Sistem)"  | tee -a log-install.txt
 echo -e "\e[34;1m mem-info      (Menampilkan Informasi memory)" | tee -a log-install.txt
-echo -e "\e[34;1m limit-login	        (kill multy login)" | tee -a log-install.txt
-echo -e "\e[34;1m about-team   (Informasi tentang script auto install)"  | tee -a log-install.txt
+echo -e "\e[34;1m limit-login	  (kill multy login)" | tee -a log-install.txt
+echo -e "\e[34;1m about-team    (Informasi tentang script auto install)"  | tee -a log-install.txt
 echo -e "\e[35;1m Account Default (utk SSH dan VPN)"  | tee -a log-install.txt
 echo -e "---------------"  | tee -a log-install.txt
 echo -e "\e[35;1m User     : LdSeptian"  | tee -a log-install.txt
@@ -264,7 +261,7 @@ echo -e "\e[36;1m =[Webmin   : http://$MYIP:10000/]="  | tee -a log-install.txt
 echo -e "\e[36;1m =[Timezone : Asia/Jakarta (GMT +7)]="  | tee -a log-install.txt
 echo -e "\e[36;1m =[IPv6     : [off]]="  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo -e "\e[37;1m =[Original Script by @Ldseptian | x-about]="  | tee -a log-install.txt
+echo -e "\e[37;1m =[Original Script by har1st]="  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo -e "\e[37;1m =[Log Instalasi --> /root/log-install.txt]="  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
