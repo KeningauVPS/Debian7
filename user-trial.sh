@@ -1,13 +1,13 @@
 #!/bin/bash
 #Script auto create trial user SSH
 #yg akan expired setelah 1 hari
-#modified by har1st
+#modified by har1st Pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 
 IP=`dig +short myip.opendns.com @resolver1.opendns.com`
 
-Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c2`
 hari="1"
-Pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
+Pass=trial
 
 useradd -e `date -d "$hari days" +"%Y-%m-%d"` -s /bin/false -M $Login
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
