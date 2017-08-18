@@ -52,7 +52,7 @@ then
     menu
 elif [ "$nomer" = "7" ]
 then
-    dropmon    
+    dropmon.sh    
 elif [ "$nomer" = "8" ]
 then
     banner-edit
