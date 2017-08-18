@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 cd /usr/local/bin
 wget -O premium-script.tar.gz "http://script.hostingtermurah.net/repo/premiumscript/premium-script.tar.gz"
 tar -xvf premium-script.tar.gz
