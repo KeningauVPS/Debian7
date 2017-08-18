@@ -173,20 +173,20 @@ service vnstat restart
 
 # download
 cd /usr/bin
-wget -O menu "http://x-mvst.cf/ld/Debian7/menu.sh"
-wget -O banner-edit "http://x-mvst.cf/ld/Debian7/banner-edit.sh"
-wget -O user-new "http://x-mvst.cf/ld/Debian7/usernew.sh"
-wget -O create-trial "http://x-mvst.cf/ld/Debian7/trial.sh"
-wget -O delete-user "http://x-mvst.cf/ld/Debian7/hapus.sh"
-wget -O user-login "http://x-mvst.cf/ld/Debian7/user-login.sh"
-wget -O user-list "http://x-mvst.cf/ld/Debian7/user-list.sh"
-wget -O resvis "http://x-mvst.cf/ld/Debian7/resvis.sh"
+wget -O menu "https://github.com/har1st/Debian7/blob/master/menu.sh"
+wget -O banner-edit "https://github.com/har1st/Debian7/blob/master/banner-edit.sh"
+wget -O user-new "https://github.com/har1st/Debian7/blob/master/user-new.sh"
+wget -O create-trial "https://github.com/har1st/Debian7/blob/master/user-trial.sh"
+wget -O delete-user "https://github.com/har1st/Debian7/blob/master/user-del.sh"
+wget -O user-login "https://github.com/har1st/Debian7/blob/master/user-login.sh"
+wget -O user-list "https://github.com/har1st/Debian7/blob/master/user-list.sh"
+wget -O resvis "https://github.com/har1st/Debian7/blob/master/resvis.sh"
 wget -O speedtest "http://x-mvst.cf/ld/Debian7/speedtest_cli.py"
-wget -O info "http://x-mvst.cf/ld/Debian7/info.sh"
-wget -O mem-info "http://x-mvst.cf/ld/Debian7/mrtg-mem.sh"
-wget -O about-team "http://x-mvst.cf/ld/Debian7/about.sh"
-wget -O limit-login "http://x-mvst.cf/ld/Debian7/user-limit.sh"
-wget -O create-ocs "http://x-mvst.cf/ld/Debian7/create-ocs.sh"
+wget -O info "https://github.com/har1st/Debian7/blob/master/info.sh"
+wget -O mem-info "https://github.com/har1st/Debian7/blob/master/mrtg-mem.sh"
+wget -O about-team "https://github.com/har1st/Debian7/blob/master/about.sh"
+wget -O limit-login "https://github.com/har1st/Debian7/blob/master/user-limit.sh"
+wget -O create-ocs "https://github.com/har1st/Debian7/blob/master/create-ocs.sh"
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "* * * * * service dropbear restart" > /etc/cron.d/dropbear
 chmod +x menu
