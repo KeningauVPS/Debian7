@@ -1,4 +1,5 @@
-#!/usr/bin
+#!/bin/bash
+#dropmon
 if [ $1 ];then
 port_dropbear=$1
 log=/var/log/auth.log
