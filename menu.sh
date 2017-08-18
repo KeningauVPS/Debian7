@@ -6,13 +6,15 @@ CPU=`egrep 'GHz' /proc/cpuinfo`
 IP=`dig +short myip.opendns.com @resolver1.opendns.com` 
 UP=`uptime`
 HT=`hostname`
-echo -e "\e[35;1m =IP: \e[32;1m [$IP]"
-echo -e "\e[35;1m =Webmin: \e[32;1m [$IP]:10000"
-echo -e "\e[35;1m =Up Time: \e[32;1m [$UP]"
-echo -e "\e[35;1m =Server name: \e[32;1m [$HT]"
-echo -e "\e[35;1m =Total akun aktif: \e[32;1m [$JUMLAH]"
+
+echo -e "\e[35;1m IP        : \e[32;1m $IP"
+echo -e "\e[35;1m Webmin    : \e[32;1m $IP:10000"
+echo -e "\e[35;1m Up Time   : \e[32;1m $UP"
+echo -e "\e[35;1m Server    : \e[32;1m $HT"
+echo -e "\e[35;1m Akun aktif: \e[32;1m $JUMLAH"
 echo -e ""
-echo -e "\e[37;1m =========================================================="
+echo -e "\e[37;1m ===============================✩✩✩har1st™✩✩✩==========================="
+echo -e "\e[36;1m SSH/VPN :" 
 echo -e "\e[31;1m 1).  \e[33;1m */ menu             : \e[32;1m[menampilkan daftar perintah]"
 echo -e "\e[31;1m 2).  \e[33;1m */ banner-edit      : \e[32;1m[membuat/edit banner SSH]"
 echo -e "\e[31;1m 3).  \e[33;1m */ user-new         : \e[32;1m[membuat akun SSH & OpenVPN]"
