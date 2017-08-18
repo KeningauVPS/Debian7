@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Script Copyright x--about.cf
-# Mod by Ldseptian
+# Mod by har1st
 # ==========================
 # 
 
@@ -52,5 +52,5 @@ echo -e "\e[37;1m=[------------------------------------------------]="
 
 echo "";
 
-echo -e "\e[36;1mMod by @LdSeptian | x-about";
+echo -e "\e[36;1mMod by har1st";
 echo -e "\e[30;1m"
