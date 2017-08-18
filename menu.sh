@@ -11,7 +11,7 @@ echo -e "\e[35;1m IP        : \e[32;1m $IP"
 echo -e "\e[35;1m Server    : \e[32;1m $HT"
 echo -e "\e[35;1m Akun aktif: \e[32;1m $JUMLAH"
 echo -e ""
-echo -e "\e[37;1m ============================✩✩✩ har1st™ ✩✩✩==========================="
+echo -e "\e[37;1m ============================✩✩✩ har1st™ ✩✩✩============================="
 echo -e "\e[36;1m SSH/VPN :" 
 echo -e "\e[31;1m  1. \e[33;1m */ menu             : \e[32;1m[menampilkan daftar perintah]"
 echo -e "\e[31;1m  2. \e[33;1m */ user-new         : \e[32;1m[membuat akun SSH & OpenVPN]"
@@ -19,11 +19,11 @@ echo -e "\e[31;1m  3. \e[33;1m */ create-trial     : \e[32;1m[membuat akun trial
 echo -e "\e[31;1m  4. \e[33;1m */ delete-user      : \e[32;1m[menghapus akun SSH & OpenVPN]"
 echo -e "\e[31;1m  5. \e[33;1m */ user-login       : \e[32;1m[cek user login]"
 echo -e "\e[31;1m  6. \e[33;1m */ user-list        : \e[32;1m[cek member SSH & OpenVPN]"
-echo -e "\e[31;1m  7. \e[33;1m */ limit-login      : \e[32;1m[kill multy login]"
-echo -e "\e[31;1m  8. \e[33;1m */ banner-edit      : \e[32;1m[membuat/edit banner SSH]"
+echo -e "\e[31;1m  7. \e[33;1m */ dropmon          : \e[32;1m[cek login dropbear]"
+echo -e "\e[31;1m  8. \e[33;1m */ limit-login      : \e[32;1m[kill multy login]"
+echo -e "\e[31;1m  9. \e[33;1m */ banner-edit      : \e[32;1m[membuat/edit banner SSH]"
 echo -e ""
 echo -e "\e[36;1m SERVER SETTING :"
-echo -e "\e[31;1m  9. \e[33;1m */ reboot           : \e[32;1m[reboot VPS]"
 echo -e "\e[31;1m 10. \e[33;1m */ speedtest        : \e[32;1m[speedtest VPS]"
 echo -e "\e[31;1m 11. \e[33;1m */ info             : \e[32;1m[menampilkan informasi sistem]"
 echo -e "\e[31;1m 12. \e[33;1m */ mem-info         : \e[32;1m[info script auto install]"
@@ -41,7 +41,8 @@ echo -e "\e[31;1m 23. \e[33;1m */ create-ocs       : \e[32;1m[mengaktifkan OCS p
 echo -e "\e[31;1m 24. \e[33;1m */ change-sslwebmin : \e[32;1m[Error ssl di webmin ganti ssl=1 ke ssl=0]"
 echo -e "\e[31;1m 25. \e[33;1m */ about-team       : \e[32;1m[info script auto install]"
 echo -e "\e[31;1m 26. \e[33;1m */ exit             : \e[32;1m[keluar dari Console]"
-echo -e "\e[37;1m ============================✩✩✩ har1st™ ✩✩✩==========================="
+echo -e "\e[31;1m 27. \e[33;1m */ reboot           : \e[32;1m[reboot VPS]"
+echo -e "\e[37;1m =====================✩✩✩ copyleft@har1st™ 2017 ✩✩✩======================"
 echo -e "\e[37;1m"
 
 read -p "=[Masukkan pilihan anda]= :" nomer
@@ -49,6 +50,9 @@ read -p "=[Masukkan pilihan anda]= :" nomer
 if [ "$nomer" = "1" ]
 then
     menu
+elif [ "$nomer" = "7" ]
+then
+    dropmon    
 elif [ "$nomer" = "8" ]
 then
     banner-edit
@@ -85,7 +89,7 @@ then
 elif [ "$nomer" = "25" ]
 then
     about-team
-elif [ "$nomer" = "7" ]
+elif [ "$nomer" = " " ]
 then
     limit-login
 elif [ "$nomer" = "26" ]
