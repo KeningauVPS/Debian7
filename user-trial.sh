@@ -13,7 +13,7 @@ useradd -e `date -d "$hari days" +"%Y-%m-%d"` -s /bin/false -M $Login
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""
 echo -e "\e[38;1m============================="
-echo -e "\e[35;1m======Info Akun SSH/VPN======"
+echo -e "\e[35;1m=======Info Akun Trial======="
 echo -e "\e[33;1mHost    : \e[35;1m$IP"
 echo -e "\e[33;1mUsername: \e[35;1m$Login"
 echo -e "\e[33;1mPassword: \e[35;1m$Pass"
