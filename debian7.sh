@@ -80,7 +80,6 @@ echo "screenfetch" >> .bash_profile
 #echo "clear" >> .profile
 #echo "screenfetch" >> .profile
 
-
 # install webserver
 cd
 rm /etc/nginx/sites-enabled/default
@@ -115,9 +114,9 @@ cd /etc/openvpn/
 wget -O /etc/openvpn/1194-client.ovpn "http://x-mvst.cf/ld/Debian7/1194-client.conf"
 sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
 PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
-useradd -M -s /bin/false Admin
-echo "LdSeptian:$PASS" | chpasswd
-echo "LdSeptian" > pass.txt
+useradd -M -s /bin/false har1st
+echo "har1st:$PASS" | chpasswd
+echo "har1st" > pass.txt
 echo "$PASS" >> pass.txt
 tar cf client.tar 1194-client.ovpn pass.txt
 cp client.tar /home/vps/public_html/
@@ -179,6 +178,33 @@ cd
 # install fail2ban
 apt-get -y install fail2ban;service fail2ban restart
 
+# Instal DDOS Flate
+if [ -d '/usr/local/ddos' ]; then
+	echo; echo; echo "Please un-install the previous version first"
+	exit 0
+else
+	mkdir /usr/local/ddos
+fi
+clear
+echo; echo 'Installing DOS-Deflate 0.6'; echo
+echo; echo -n 'Downloading source files...'
+wget -q -O /usr/local/ddos/ddos.conf http://www.inetbase.com/scripts/ddos/ddos.conf
+echo -n '.'
+wget -q -O /usr/local/ddos/LICENSE http://www.inetbase.com/scripts/ddos/LICENSE
+echo -n '.'
+wget -q -O /usr/local/ddos/ignore.ip.list http://www.inetbase.com/scripts/ddos/ignore.ip.list
+echo -n '.'
+wget -q -O /usr/local/ddos/ddos.sh http://www.inetbase.com/scripts/ddos/ddos.sh
+chmod 0755 /usr/local/ddos/ddos.sh
+cp -s /usr/local/ddos/ddos.sh /usr/local/sbin/ddos
+echo '...done'
+echo; echo -n 'Creating cron to run script every minute.....(Default setting)'
+/usr/local/ddos/ddos.sh --cron > /dev/null 2>&1
+echo '.....done'
+echo; echo 'Installation has completed.'
+echo 'Config file is at /usr/local/ddos/ddos.conf'
+echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
+
 # install squid3
 apt-get -y install squid3
 wget -O /etc/squid3/squid.conf "/https://raw.githubusercontent.com/har1st/Debian7/master/squid3.conf"
@@ -227,6 +253,20 @@ chmod +x about-team
 chmod +x limit-login
 chmod +x create-ocs
 
+# Blockir Torrent
+iptables -A OUTPUT -p tcp --dport 6881:6889 -j DROP
+iptables -A OUTPUT -p udp --dport 1024:65534 -j DROP
+iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
+iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
+iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
+iptables -A FORWARD -m string --algo bm --string "BitTorrent" -j DROP
+iptables -A FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
+iptables -A FORWARD -m string --algo bm --string "peer_id=" -j DROP
+iptables -A FORWARD -m string --algo bm --string ".torrent" -j DROP
+iptables -A FORWARD -m string --algo bm --string "announce.php?passkey=" -j DROP
+iptables -A FORWARD -m string --algo bm --string "torrent" -j DROP
+iptables -A FORWARD -m string --algo bm --string "announce" -j DROP
+iptables -A FORWARD -m string --algo bm --string "info_hash" -j DROP
 
 # finalisasi
 chown -R www-data:www-data /home/vps/public_html
@@ -275,7 +315,7 @@ echo -e "\e[34;1m limit-login	  (kill multy login)" | tee -a log-install.txt
 echo -e "\e[34;1m about-team    (Informasi tentang script auto install)"  | tee -a log-install.txt
 echo -e "\e[35;1m Account Default (utk SSH dan VPN)"  | tee -a log-install.txt
 echo -e "---------------"  | tee -a log-install.txt
-echo -e "\e[35;1m User     : LdSeptian"  | tee -a log-install.txt
+echo -e "\e[35;1m User     : har1st"  | tee -a log-install.txt
 echo -e "\e[35;1m Password : $PASS"  | tee -a log-install.txt
 echo -e ""  | tee -a log-install.txt
 echo -e "\e[35;1m =[Fitur lain]="  | tee -a log-install.txt
