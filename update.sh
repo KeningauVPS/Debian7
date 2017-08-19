@@ -20,6 +20,7 @@ wget -O about-team "https://raw.githubusercontent.com/har1st/Debian7/master/abou
 wget -O limit-login "https://raw.githubusercontent.com/har1st/Debian7/master/user-limit.sh"
 wget -O create-ocs "https://raw.githubusercontent.com/har1st/Debian7/master/create-ocs.sh"
 wget -O dropmon "https://raw.githubusercontent.com/har1st/Debian7/master/dropmon.sh"
+wget -O update "https://raw.githubusercontent.com/har1st/Debian7/master/update.sh"
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "* * * * * service dropbear restart" > /etc/cron.d/dropbear
 chmod +x menu
@@ -37,19 +38,4 @@ chmod +x about-team
 chmod +x limit-login
 chmod +x create-ocs
 chmod +x dropmon
-
-
-# finalisasi
-chown -R www-data:www-data /home/vps/public_html
-service nginx start
-service php-fpm start
-service vnstat restart
-service openvpn restart
-service snmpd restart
-service ssh restart
-service dropbear restart
-service fail2ban restart
-service squid3 restart
-service webmin restart
-rm -rf ~/.bash_history && history -c
-echo "unset HISTFILE" >> /etc/profile
+chmod +x update
