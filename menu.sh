@@ -138,14 +138,4 @@ then
     menu
 fi
 
-echo -e "\e[30;1m"
-
-
-
-
-
-
-
-
-
-	
+echo -e "\e[30;1m"	
