@@ -236,6 +236,7 @@ wget -O mem-info "https://raw.githubusercontent.com/har1st/Debian7/master/mrtg-m
 wget -O about-team "https://raw.githubusercontent.com/har1st/Debian7/master/about.sh"
 wget -O limit-login "https://raw.githubusercontent.com/har1st/Debian7/master/user-limit.sh"
 wget -O create-ocs "https://raw.githubusercontent.com/har1st/Debian7/master/create-ocs.sh"
+wget -O dropmon "https://raw.githubusercontent.com/har1st/Debian7/master/dropmon.sh"
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "* * * * * service dropbear restart" > /etc/cron.d/dropbear
 chmod +x menu
@@ -252,6 +253,7 @@ chmod +x mem-info
 chmod +x about-team
 chmod +x limit-login
 chmod +x create-ocs
+chmkd +x dropmon
 
 # Blockir Torrent
 iptables -A OUTPUT -p tcp --dport 6881:6889 -j DROP
