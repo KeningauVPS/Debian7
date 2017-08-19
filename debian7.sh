@@ -54,7 +54,7 @@ cd
 
 #touch screenfetch-dev
 cd
-wget https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev
+wget "https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev" 
 mv screenfetch-dev /usr/bin
 cd /usr/bin
 mv screenfetch-dev screenfetch
@@ -63,7 +63,7 @@ chmod 755 screenfetch
 cd
 echo "clear" >> .bash_profile
 echo "screenfetch" >> .bash_profile
-#wget https://github.com/KittyKatt/screenFetch/archive/master.zip
+#wget "https://github.com/KittyKatt/screenFetch/archive/master.zip" 
 #apt-get install -y unzip
 #unzip master.zip
 #mv screenFetch-master/screenfetch-dev /usr/bin
