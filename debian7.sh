@@ -18,7 +18,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
 
 # set repo
-wget -O /etc/apt/sources.list "http://x-mvst.cf/ld/Debian7/sources.list.debian7"
+wget -O /etc/apt/sources.list "https://raw.githubusercontent.com/har1st/Debian7/master/sources.list.debian7"
 wget "http://x-mvst.cf/ld/Debian7/dotdeb.gpg"
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 
