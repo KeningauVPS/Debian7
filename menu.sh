@@ -134,7 +134,6 @@ elif [ "$nomer" = "0" ]
 then
     exit
 else 
-then
     menu
 fi
 
