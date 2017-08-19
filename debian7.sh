@@ -254,6 +254,7 @@ chmod +x about-team
 chmod +x limit-login
 chmod +x create-ocs
 chmkd +x dropmon
+cd
 
 # Blockir Torrent
 iptables -A OUTPUT -p tcp --dport 6881:6889 -j DROP
@@ -287,14 +288,14 @@ echo "unset HISTFILE" >> /etc/profile
 
 # info
 clear
-echo -e "\e[36;1m Autoscript Include: installer by @LdSeptian" | tee log-install.txt
+echo -e "\e[36;1m Autoscript Include: installer by har1st" | tee log-install.txt
 echo -e "\e[36;1m ===========================================" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo -e "\e[32;1m Service"  | tee -a log-install.txt
 echo -e "\e[32;1m -------"  | tee -a log-install.txt
 echo -e "\e[37;1m OpenSSH  : 22, 143"  | tee -a log-install.txt
-echo -e "\e[32;1m Dropbear : 80, 443"  | tee -a log-install.txt
-echo -e "\e[32;1m Squid3   : 8080, 3128 (limit to IP SSH)"  | tee -a log-install.txt
+echo -e "\e[32;1m Dropbear : 80, 109, 110, 443"  | tee -a log-install.txt
+echo -e "\e[32;1m Squid3   : 8080, 8000, 3128 (limit to IP SSH)"  | tee -a log-install.txt
 echo -e "\e[37;1m OpenVPN  : TCP 1194 (client config : http://$MYIP:81/client.ovpn)"  | tee -a log-install.txt
 echo -e "\e[32;1m badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
 echo -e "\e[37;1m nginx    : 80"  | tee -a log-install.txt
@@ -303,7 +304,7 @@ echo -e "\e[37;1m Script"  | tee -a log-install.txt
 echo -e "\e[37;1m- -----"  | tee -a log-install.txt
 echo -e "\e[35;1m menu          (Menampilkan daftar perintah yang tersedia)"  | tee -a log-install.txt
 echo -e "\e[35;1m banner-edit   (Mengganti banner login)"  | tee -a log-install.txt
-echo -e "\e[35;1m user-new 	    (Membuat Akun SSH)"  | tee -a log-install.txt
+echo -e "\e[35;1m user-new 	(Membuat Akun SSH)"  | tee -a log-install.txt
 echo -e "\e[35;1m create-trial  (Membuat Akun Trial)"  | tee -a log-install.txt
 echo -e "\e[35;1m delete-user   (Menghapus Akun SSH)"  | tee -a log-install.txt
 echo -e "\e[38;1m user-login    (Cek User Login)"  | tee -a log-install.txt
@@ -313,7 +314,7 @@ echo -e "\e[34;1m reboot        (Reboot VPS)"  | tee -a log-install.txt
 echo -e "\e[34;1m speedtest     (Speedtest VPS)"  | tee -a log-install.txt
 echo -e "\e[34;1m info          (Menampilkan Informasi Sistem)"  | tee -a log-install.txt
 echo -e "\e[34;1m mem-info      (Menampilkan Informasi memory)" | tee -a log-install.txt
-echo -e "\e[34;1m limit-login	  (kill multy login)" | tee -a log-install.txt
+echo -e "\e[34;1m limit-login	(kill multy login)" | tee -a log-install.txt
 echo -e "\e[34;1m about-team    (Informasi tentang script auto install)"  | tee -a log-install.txt
 echo -e "\e[35;1m Account Default (utk SSH dan VPN)"  | tee -a log-install.txt
 echo -e "---------------"  | tee -a log-install.txt
@@ -322,9 +323,11 @@ echo -e "\e[35;1m Password : $PASS"  | tee -a log-install.txt
 echo -e ""  | tee -a log-install.txt
 echo -e "\e[35;1m =[Fitur lain]="  | tee -a log-install.txt
 echo -e "\e[35;1m =[----------]="  | tee -a log-install.txt
-echo -e "\e[36;1m =[Webmin   : http://$MYIP:10000/]="  | tee -a log-install.txt
-echo -e "\e[36;1m =[Timezone : Asia/Jakarta (GMT +7)]="  | tee -a log-install.txt
-echo -e "\e[36;1m =[IPv6     : [off]]="  | tee -a log-install.txt
+echo -e "\e[36;1m =[Webmin       : http://$MYIP:10000/]="  | tee -a log-install.txt
+echo -e "\e[36;1m =[Timezone     : Asia/Jakarta (GMT +7)]="  | tee -a log-install.txt
+echo -e "\e[36;1m =[IPv6         : [Off]]="  | tee -a log-install.txt
+echo -e "\e[36;1m =[Ddos Flate   : [On]]="  | tee -a log-install.txt
+echo -e "\e[36;1m =[Block Torrent: [On]]="  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo -e "\e[37;1m =[Original Script by har1st]="  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
