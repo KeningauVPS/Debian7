@@ -24,6 +24,7 @@ cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 
 # remove unused
 apt-get -y --purge remove samba*;
+apt-get -y --purge remove apache2*;
 apt-get -y --purge remove sendmail*;
 apt-get -y --purge remove bind9*;
 
@@ -49,13 +50,35 @@ vnstat -u -i venet0
 service vnstat restart
 
 # install screenfetch
+cd 
+
+#touch screenfetch-dev
 cd
-wget https://github.com/KittyKatt/screenFetch/raw/master/screenfetch-dev
-mv screenfetch-dev /usr/bin/screenfetch
-chmod +x 	
-echo "clear" >> .profile
-echo "screenfetch" >> .profile
-chmod 777 /usr/bin/screenfetch
+wget https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev
+mv screenfetch-dev /usr/bin
+cd /usr/bin
+mv screenfetch-dev screenfetch
+chmod +x /usr/bin/screenfetch
+chmod 755 screenfetch
+cd
+echo "clear" >> .bash_profile
+echo "screenfetch" >> .bash_profile
+#wget https://github.com/KittyKatt/screenFetch/archive/master.zip
+#apt-get install -y unzip
+#unzip master.zip
+#mv screenFetch-master/screenfetch-dev /usr/bin
+#cd /usr/bin
+#mv screenfetch-dev screenfetch
+#chmod +x /usr/bin/screenfetch
+#chmod 755 screenfetch
+#cd
+#echo "clear" >> .bash_profile
+#echo "screenfetch" >> .bash_profile
+#wget -O screenfetch-dev "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/screenfetch-dev"
+#mv screenfetch-dev /usr/bin/screenfetch
+#chmod +x /usr/bin/screenfetch
+#echo "clear" >> .profile
+#echo "screenfetch" >> .profile
 
 
 # install webserver
@@ -64,7 +87,7 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "http://x-mvst.cf/ld/Debian7/nginx.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by @LdSeptian | x-about</pre>" > /home/vps/public_html/index.html
+echo "<pre>Haris Eka Putra</pre>" > /home/vps/public_html/index.html
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 wget -O /etc/nginx/conf.d/vps.conf "http://x-mvst.cf/ld/Debian7/vps.conf"
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
@@ -158,7 +181,7 @@ apt-get -y install fail2ban;service fail2ban restart
 
 # install squid3
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "http://x-mvst.cf/ld/Debian7/squid3.conf"
+wget -O /etc/squid3/squid.conf "/https://raw.githubusercontent.com/har1st/Debian7/master/squid3.conf"
 sed -i $MYIP2 /etc/squid3/squid.conf;
 service squid3 restart
 
