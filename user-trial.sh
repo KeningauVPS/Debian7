@@ -5,7 +5,7 @@
 
 IP=`dig +short myip.opendns.com @resolver1.opendns.com`
 
-Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c2`
+Login=trial-`</dev/urandom tr -dc X-Z0-9 | head -c2`
 hari="1"
 Pass=trial
 
