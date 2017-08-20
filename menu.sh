@@ -6,6 +6,13 @@ CPU=`egrep 'GHz' /proc/cpuinfo`
 IP=`dig +short myip.opendns.com @resolver1.opendns.com` 
 UP=`uptime`
 HT=`hostname`
+clear
+echo -e "\e[32;1m     _  _    .__.                ____.         __.      _  _  " 
+echo -e "\e[32;1m  __| || |__ |  |__ _____ ______/_   | _______/  |_  __| || |__" 
+echo -e "\e[32;1m  \   __   / |  |  \\__  \\_  __ \   |/  ___/\   __\ \   __   /" 
+echo -e "\e[32;1m   |  ||  |  |   Y  \/ __ \|  | \/   |\___ \  |  |    |  ||  |" 
+echo -e "\e[32;1m  /_  ~~  _\ |___|  (____  /__|  |___/____  > |__|   /_  ~~  _\" 
+echo -e "\e[32;1m    |_||_|        \/     \/               \/           |_||_| " 
 
 echo -e "\e[35;1m IP        : \e[32;1m $IP"
 echo -e "\e[35;1m Server    : \e[32;1m $HT"
