@@ -1,9 +1,16 @@
 #!/bin/bash
 #Script auto create user SSH
 
-read -p "Username  : " Login
-read -p "Password  : " Pass
-read -p "Expired   : " masaaktif
+clear
+echo -e "\e[37;1m+=================================+"
+echo -e "\e[36;1m+     Buat Akun SSH/OpenVPN       +" 
+echo -e "\e[37;1m+=================================+"
+echo -e "+                                         +" 
+read -p " Username   : " Login
+read -p " Password   : " Pass
+read -p " Masa Aktif : " masaaktif
+echo -e "+                                         +" 
+echo -e "\e[37;1m+=================================+"
 
 IP=`dig +short myip.opendns.com @resolver1.opendns.com`
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
