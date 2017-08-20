@@ -1,8 +1,8 @@
 #!/bin/bash
-echo -e "\e[37;1m╔================╦===============╗" 
+echo -e "\e[37;1m╔----------------╦---------------╗" 
 echo -e "\e[37;1m║    USERNAME    ║   EXP. DATE   ║"
-echo -e "\e[37;1m╚================╩===============╝" 
-echo -e "\e[31;1m"
+echo -e "\e[37;1m╚----------------╩---------------╝" 
+echo -e "\e[36;1m"
 while read expired
 do
         AKUN="$(echo $expired | cut -d: -f1)"
@@ -13,7 +13,7 @@ do
         fi
 done < /etc/passwd
 JUMLAH="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
-echo -e "\e[37;1m╔================================╗" 
-echo -e "\e[37;1m║    Jumlah Akun: $JUMLAH Akun   ║"
-echo -e "\e[37;1m╚================================╝" 
+echo -e "\e[37;1m╔–--------–----------------------╗" 
+echo -e "\e[37;1m║       Jumlah Akun: $JUMLAH Akun       ║"
+echo -e "\e[37;1m╚--------------------------------╝" 
 echo -e "\e[30;1m"
