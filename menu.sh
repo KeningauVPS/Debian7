@@ -37,12 +37,13 @@ echo -e "\e[31;1m 19. \e[33;1m */ change-hostname  : \e[32;1m[Merubah hostname s
 echo -e "\e[31;1m 20. \e[33;1m */ change-password  : \e[32;1m[Merubah password server]"
 echo -e "\e[31;1m 21. \e[33;1m */ change-dropbear  : \e[32;1m[Merubah dropbear port]"
 echo -e "\e[31;1m 22. \e[33;1m */ change-squid3    : \e[32;1m[Merubah squid3 port]"
-echo -e "\e[31;1m 23. \e[33;1m */ create-ocs       : \e[32;1m[mengaktifkan OCS panel]"
+echo -e "\e[31;1m 23. \e[33;1m */ create-ocs       : \e[32;1m[Aktifkan OCS panel]"
 echo -e "\e[31;1m 24. \e[33;1m */ change-sslwebmin : \e[32;1m[Error ssl di webmin ganti ssl=1 ke ssl=0]"
 echo -e "\e[31;1m 25. \e[33;1m */ about-team       : \e[32;1m[Info Script Auto Install]"
-echo -e "\e[31;1m 26. \e[33;1m */ reboot           : \e[32;1m[reboot VPS]"
+echo -e "\e[31;1m 26. \e[33;1m */ reboot           : \e[32;1m[Reboot VPS]"
+echo -e "\e[31;1m 27. \e[33;1m */ update           : \e[32;1m[Update Script]"
 echo -e ""
-echo -e "\e[31;1m  0. \e[33;1m */ exit             : \e[32;1m[Keluar Dari Console]"
+echo -e "\e[31;1m  0. \e[33;1m */ exit             : \e[32;1m[Keluar Dari Menu]"
 echo -e "\e[37;1m =====================✩✩✩ copyleft@har1st™ 2017 ✩✩✩======================"
 echo -e "\e[37;1m"
 
@@ -130,6 +131,9 @@ then
 elif [ "$nomer" = "26" ]
 then
     reboot
+elif [ "$nomer" = "27" ]
+then
+    update
 elif [ "$nomer" = "0" ]
 then
     exit
